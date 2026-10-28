@@ -1,21 +1,42 @@
 # BSA Git & GitHub Workshop
 
-Practice Git with your own fork, then create a GitHub profile README.
+First, build a GitHub profile README. Then practice branches and pull requests in a fork of this workshop repository.
 
-## 1. Fork and clone
+## Exercise 1: Your profile README
 
-Click **Fork** at the top of this repository and create a fork in your account. Clone your fork (replace YOUR-USERNAME with your GitHub username):
+1. On GitHub, create a **public** repository named exactly your GitHub username. Turn on **Add README**. If it already exists, use it instead.
+2. On your repository, click **Code → HTTPS** and copy the URL. Open a terminal and run:
+
+```bash
+git clone YOUR-COPIED-URL
+cd YOUR-USERNAME
+git status
+```
+
+Replace the placeholders with your copied URL and username. Open the folder in your editor, edit its root `README.md`, and save. You can use ideas from [profile-template.md](profile-template.md).
+
+```bash
+git status
+git diff
+git add README.md
+git status
+git commit -m "Update profile README"
+git push
+```
+
+Complete GitHub sign-in if prompted. Refresh the repository, then visit your GitHub profile. Your README appears when the repository is public, named after your username, and has a root README.md on its default branch.
+
+## Exercise 2: Fork and open a pull request
+
+Click **Fork** at the top of this repository to create your own copy. Clone your fork; replace YOUR-USERNAME below.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/bsa-git-workshop.git
 cd bsa-git-workshop
-git status
 git switch -c practice-readme
 ```
 
-## 2. Edit and commit
-
-Open `profile-template.md` in an editor. Personalize a few lines and save it.
+Edit and save `profile-template.md`, then:
 
 ```bash
 git status
@@ -25,25 +46,7 @@ git commit -m "Personalize profile template"
 git push -u origin practice-readme
 ```
 
-On GitHub, open a pull request **within your fork** from `practice-readme` into your fork's `main`. Ask a partner to review it, then merge it. You do not need write access to the original repository.
-
-## 3. Make it your profile README
-
-Create a **public** repository named exactly your GitHub username and initialize it with a README. If it already exists, use it instead. Clone it and edit its root `README.md`; copy ideas from the template if you like.
-
-```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.git
-cd YOUR-USERNAME
-git switch -c update-profile
-# Edit README.md and save it
-git status
-git diff
-git add README.md
-git commit -m "Update profile README"
-git push -u origin update-profile
-```
-
-Open a pull request in your profile repository and merge it into the default branch. Visit your GitHub profile to see your README. The template in the workshop repository will not appear there by itself.
+Open a pull request **within your fork** from `practice-readme` into your fork's `main`. Check the base repository: GitHub may suggest the original repository. Ask a partner to review, then merge.
 
 ## Troubleshooting
 
